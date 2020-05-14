@@ -8,6 +8,7 @@ type Dispatcher interface {
 	Has(name string) bool
 	List() []string
 	Remove(names ...string)
+	Events() map[string][]interface{}
 }
 
 // Default event instance
@@ -36,4 +37,10 @@ func List() []string {
 // Remove delete events from the event list from the default source.
 func Remove(names ...string) {
 	globalSource.Remove(names...)
+}
+
+
+// Events returns the list of registered events
+func Events() {
+	globalSource.Events()
 }

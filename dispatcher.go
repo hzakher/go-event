@@ -158,3 +158,16 @@ func (e *event) Remove(names ...string) {
 	}
 	e.events = make(map[string][]interface{})
 }
+
+// Events returns event list 
+func (e *event) Events() map[string][]interface{} {
+// 	e.RLock()
+// 	defer e.RUnlock()
+// 	list := make([]string, 0, len(e.events))
+// 	for name := range e.events {
+// 		list = append(list, name)
+// 	}
+// 	return list
+	return e.events 
+}
+

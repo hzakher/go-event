@@ -42,5 +42,5 @@ func Remove(names ...string) {
 
 // Events returns the list of registered events
 func Events() {
-	globalSource.Events()
+	return globalSource.Events()
 }
